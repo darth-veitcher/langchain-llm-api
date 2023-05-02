@@ -49,7 +49,7 @@ class LLMAPI(LLM, BaseModel):
 
         self.params["stop"] = stop or []
 
-        payload = json.dumps({"prompt": prompt, "params": self.params})
+        payload = json.dumps({"inputs": prompt, "parameters": self.params})
         headers = {"Content-Type": "application/json"}
 
         if self.streaming:
